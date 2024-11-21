@@ -18,4 +18,5 @@ This project selects a 1 square degree region from the SDSS for testing the code
 To execute the program, run:
 
 ```bash
-python source/run.py
+cd source
+python3 run.py
