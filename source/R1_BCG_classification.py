@@ -30,8 +30,8 @@ def BCG_classificaton(df, threshold):
     model = xgb.Booster()
     model.load_model(fname='../model/XGBoost_model.model') 
     predprob = model.predict(xgb.DMatrix(input_df))
-    print('There are', len(input_df), 'galaxies.')
-    print('Threshold is set as %.2f.'%(threshold))
+    # print('There are', len(input_df), 'galaxies.')
+    # print('Threshold is set as %.2f.'%(threshold))
     print('Number of BCG candidates: %d'%(len(predprob[predprob>threshold])))
     predictions = predprob > threshold
     BCG_cand = df[predictions]

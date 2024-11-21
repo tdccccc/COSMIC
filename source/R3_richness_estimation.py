@@ -34,8 +34,8 @@ def mass_est(ResNet_input_file, batch_size=128, num_workers=20):
             current_batch_size = len(predictions)
             res[i*batch_size:i*batch_size+current_batch_size] = predictions.cpu().numpy()
             
-            if i % (10000 // batch_size) == 0:
-                print(f'{i * batch_size}/{num} done...')
+            # if i % (10000 // batch_size) == 0:
+            #     print(f'{i * batch_size}/{num} done...')
     return res
 
 

@@ -281,6 +281,12 @@ if __name__ == '__main__':
     cluster_path = '../output/cluster.fits'
     dio.savefile(cluster, cluster_path)
 
+    print('Finally found %d cluster candidates.'%(cluster.shape[0]))
+
+    # for check in Legacy Survey Sky Browser
+    cluster.sort_values('pred_richness', ascending=False)[
+        ['ra','dec']].to_csv('../output/cluster_loc.csv', index=False)
+
     # # cm
     # input_path = '../output/cluster.fits'
     # cluster = dio.readfile(input_path)

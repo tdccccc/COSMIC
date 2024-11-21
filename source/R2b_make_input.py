@@ -81,8 +81,8 @@ def process_data(dataset, output_path, som_path):
             Z[idx] = z
             ID[idx] = cid
 
-            if idx % 10000 == 0:
-                print(f"{idx} / {num_samples} finished")
+            # if idx % 10000 == 0:
+            #     print(f"{idx} / {num_samples} finished")
 
     with h5py.File(output_path, 'w') as f:
         f.create_dataset('x', data=X)
